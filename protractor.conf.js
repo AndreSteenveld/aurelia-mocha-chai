@@ -14,10 +14,10 @@ exports.config = {
     path: 'aurelia.protractor.js'
   }],
 
+  framework: 'mocha',
 
-  // Options to be passed to Jasmine-node.
-  jasmineNodeOpts: {
-    showColors: true,
-    defaultTimeoutInterval: 30000
+  mochaOpts: {
+    reporter: 'spec',
+    timeout: 4000
   }
 };
