@@ -15,6 +15,7 @@
         "max-len": [ "off" ],
         "no-param-reassign": [ "off" ],
         "padded-blocks": [ "off" ],
+        "camelcase": [ "off" ],
 
         "no-return-assign": [ "warn" ],
         "new-parens": [ "error" ],
