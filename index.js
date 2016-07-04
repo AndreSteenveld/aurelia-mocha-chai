@@ -2,31 +2,31 @@
 // Electron for desktop apps. See the readme file for more information.
 /* eslint-disable strict, no-var, no-console */
 
-'use strict';
+"use strict";
 
-const electron = require('electron');
+const electron = require( "electron" );
 const { app } = electron;
 const { BrowserWindow } = electron;
 let mainWindow;
 
-app.on('window-all-closed', () => {
-    if (process.platform !== 'darwin') {
+app.on( "window-all-closed", () => {
+    if ( process.platform !== "darwin" ){
         app.quit();
     }
 });
 
-app.on('ready', () => {
+app.on( "ready", () => {
     mainWindow = new BrowserWindow({
         width: 800,
         height: 600,
     });
 
-    mainWindow.loadURL(`file://${__dirname}/index.html`);
-    mainWindow.webContents.on('did-finish-load', () => {
-        mainWindow.setTitle(app.getName());
+    mainWindow.loadURL( `file://${ __dirname }/index.html` );
+    mainWindow.webContents.on( "did-finish-load", () => {
+        mainWindow.setTitle( app.getName() );
     });
 
-    mainWindow.on('closed', () => {
+    mainWindow.on( "closed", () => {
         mainWindow = null;
     });
 });

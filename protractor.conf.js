@@ -4,20 +4,20 @@ exports.config = {
 
     // Capabilities to be passed to the webdriver instance.
     capabilities: {
-        browserName: 'chrome',
+        browserName: "chrome",
     },
 
     // seleniumAddress: 'http://0.0.0.0:4444',
-    specs: ['test/e2e/dist/**/*.js'],
+    specs: [ "test/e2e/dist/**/*.js" ],
 
     plugins: [{
-        path: 'aurelia.protractor.js',
+        path: "aurelia.protractor.js",
     }],
 
-    framework: 'mocha',
+    framework: "mocha",
 
     mochaOpts: {
-        reporter: 'spec',
+        reporter: "spec",
         timeout: 4000,
     },
 };

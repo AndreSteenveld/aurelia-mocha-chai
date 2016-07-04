@@ -1,25 +1,25 @@
 // Karma configuration
 // Generated on Fri Dec 05 2014 16:49:29 GMT-0500 (EST)
 
-module.exports = function (config) {
+module.exports = function( config ){
     config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
-        basePath: '',
+        basePath: "",
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-        frameworks: ['jspm', 'mocha', 'chai'],
+        frameworks: [ "jspm", "mocha", "chai" ],
 
         jspm: {
       // Edit this to your needs
-            loadFiles: ['test/unit/setup.js', 'test/unit/**/*.js'],
-            serveFiles: ['src/**/*.*'],
+            loadFiles: [ "test/unit/setup.js", "test/unit/**/*.js" ],
+            serveFiles: [ "src/**/*.*" ],
             paths: {
-                '*': 'src/*',
-                'test/*': 'test/*',
-                'github:*': 'jspm_packages/github/*',
-                'npm:*': 'jspm_packages/npm/*',
+                "*": "src/*",
+                "test/*": "test/*",
+                "github:*": "jspm_packages/github/*",
+                "npm:*": "jspm_packages/npm/*",
             },
         },
 
@@ -33,17 +33,17 @@ module.exports = function (config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {
-            'test/**/*.js': ['babel'],
-            'src/**/*.js': ['babel'],
+            "test/**/*.js": [ "babel" ],
+            "src/**/*.js": [ "babel" ],
         },
         babelPreprocessor: {
             options: {
-                sourceMap: 'inline',
-                presets: ['es2015-loose', 'stage-1'],
+                sourceMap: "inline",
+                presets: [ "es2015-loose", "stage-1" ],
                 plugins: [
-                    'syntax-flow',
-                    'transform-decorators-legacy',
-                    'transform-flow-strip-types',
+                    "syntax-flow",
+                    "transform-decorators-legacy",
+                    "transform-flow-strip-types",
                 ],
             },
         },
@@ -51,7 +51,7 @@ module.exports = function (config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-        reporters: ['progress'],
+        reporters: [ "progress" ],
 
     // web server port
         port: 9876,
@@ -68,7 +68,7 @@ module.exports = function (config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-        browsers: ['Chrome'],
+        browsers: [ "Chrome" ],
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits

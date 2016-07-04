@@ -1,14 +1,14 @@
 /* Aurelia Protractor Plugin */
 /* eslint-disable no-var, no-console */
-function addValueBindLocator() {
-    by.addLocator('valueBind', function (bindingModel, optParentElement) {
+function addValueBindLocator(){
+    by.addLocator( "valueBind", function( bindingModel, optParentElement ){
         var using = optParentElement || document;
-        var matches = using.querySelectorAll('*[value\\.bind="' + bindingModel + '"]');
+        var matches = using.querySelectorAll( '*[value\\.bind="' + bindingModel + '"]' );
         var result;
 
-        if (matches.length === 0) {
+        if ( matches.length === 0 ){
             result = null;
-        } else if (matches.length === 1) {
+        } else if ( matches.length === 1 ){
             result = matches[0];
         } else {
             result = matches;
@@ -18,33 +18,33 @@ function addValueBindLocator() {
     });
 }
 
-function loadAndWaitForAureliaPage(pageUrl) {
-    browser.get(pageUrl);
+function loadAndWaitForAureliaPage( pageUrl ){
+    browser.get( pageUrl );
     return browser.executeAsyncScript(
-    'var cb = arguments[arguments.length - 1];' +
+    "var cb = arguments[arguments.length - 1];" +
     'document.addEventListener("aurelia-composed", function (e) {' +
     '  cb("Aurelia App composed")' +
-    '}, false);'
-  ).then(function (result) {
-      console.log(result);
+    "}, false);"
+  ).then( function( result ){
+      console.log( result );
       return result;
   });
 }
 
-function waitForRouterComplete() {
+function waitForRouterComplete(){
     return browser.executeAsyncScript(
-    'var cb = arguments[arguments.length - 1];' +
+    "var cb = arguments[arguments.length - 1];" +
     'document.querySelector("[aurelia-app]")' +
     '.aurelia.subscribeOnce("router:navigation:complete", function() {' +
-    '  cb(true)' +
-    '});'
-  ).then(function (result) {
+    "  cb(true)" +
+    "});"
+  ).then( function( result ){
       return result;
   });
 }
 
 /* Plugin hooks */
-exports.setup = function (config) {
+exports.setup = function( config ){
   // Ignore the default Angular synchronization helpers
     browser.ignoreSynchronization = true;
 
@@ -58,5 +58,5 @@ exports.setup = function (config) {
     browser.waitForRouterComplete = waitForRouterComplete;
 };
 
-exports.teardown = function (config) {};
-exports.postResults = function (config) {};
+exports.teardown = function( config ){};
+exports.postResults = function( config ){};

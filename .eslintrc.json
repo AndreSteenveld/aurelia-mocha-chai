@@ -13,7 +13,26 @@
         "spaced-comment": [ "error", "always" ],
 
         "max-len": [ "off" ],
-        "no-param-reassign": [ "off" ]
+        "no-param-reassign": [ "off" ],
+        "padded-blocks": [ "off" ],
+
+        "no-return-assign": [ "warn" ],
+        "new-parens": [ "error" ],
+        "quotes": [ "warn", "double", { "avoidEscape": true }],
+
+        "arrow-body-style": [ "error", "as-needed" ],
+        "arrow-parens": [ "error", "always" ],
+        "arrow-spacing": [ "error", { "before": true, "after": true } ],
+        "constructor-super": [ "error" ],
+        "no-class-assign": [ "error" ],
+        "no-confusing-arrow": ["error", {"allowParens": true}],
+        "template-curly-spacing": ["error", "always"],
+
+        "space-in-parens": ["error", "always", { "exceptions": ["{}", "[]"] }],
+        "space-before-function-paren": ["error", "never"],
+        "space-before-blocks": ["error", "never"],
+        "array-bracket-spacing": [ "error", "always", { "objectsInArrays": false }]
+
     },
 
     "plugins": [ "import" ],

@@ -1,56 +1,56 @@
-var gulp = require('gulp');
-var browserSync = require('browser-sync');
+var gulp = require( "gulp" );
+var browserSync = require( "browser-sync" );
 
 // this task utilizes the browsersync plugin
 // to create a dev server instance
 // at http://localhost:9000
-gulp.task('serve', ['build'], function (done) {
+gulp.task( "serve", [ "build" ], function( done ){
     browserSync({
         online: false,
         open: false,
         port: 9000,
         server: {
-            baseDir: ['.'],
-            middleware(req, res, next) {
-                res.setHeader('Access-Control-Allow-Origin', '*');
+            baseDir: [ "." ],
+            middleware( req, res, next ){
+                res.setHeader( "Access-Control-Allow-Origin", "*" );
                 next();
             },
         },
-    }, done);
+    }, done );
 });
 
 // this task utilizes the browsersync plugin
 // to create a dev server instance
 // at http://localhost:9000
-gulp.task('serve-bundle', ['bundle'], function (done) {
+gulp.task( "serve-bundle", [ "bundle" ], function( done ){
     browserSync({
         online: false,
         open: false,
         port: 9000,
         server: {
-            baseDir: ['.'],
-            middleware(req, res, next) {
-                res.setHeader('Access-Control-Allow-Origin', '*');
+            baseDir: [ "." ],
+            middleware( req, res, next ){
+                res.setHeader( "Access-Control-Allow-Origin", "*" );
                 next();
             },
         },
-    }, done);
+    }, done );
 });
 
 // this task utilizes the browsersync plugin
 // to create a dev server instance
 // at http://localhost:9000
-gulp.task('serve-export', ['export'], function (done) {
+gulp.task( "serve-export", [ "export" ], function( done ){
     browserSync({
         online: false,
         open: false,
         port: 9000,
         server: {
-            baseDir: ['./export'],
-            middleware(req, res, next) {
-                res.setHeader('Access-Control-Allow-Origin', '*');
+            baseDir: [ "./export" ],
+            middleware( req, res, next ){
+                res.setHeader( "Access-Control-Allow-Origin", "*" );
                 next();
             },
         },
-    }, done);
+    }, done );
 });

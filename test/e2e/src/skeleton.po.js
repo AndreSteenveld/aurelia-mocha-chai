@@ -1,15 +1,15 @@
-export class PageObjectSkeleton {
+export class PageObjectSkeleton{
 
-    constructor() {
+    constructor(){
 
     }
 
-    getCurrentPageTitle() {
+    getCurrentPageTitle(){
         return browser.getTitle();
     }
 
-    navigateTo(href) {
-        element(by.css('a[href="' + href + '"]')).click();
+    navigateTo( href ){
+        element( by.css( 'a[href="' + href + '"]' ) ).click();
         return browser.waitForRouterComplete();
     }
 }
