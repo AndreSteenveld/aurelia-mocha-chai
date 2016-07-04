@@ -7,8 +7,8 @@ var args = require('../args');
 
 // updates dependencies in this folder
 // from folders in the parent directory
-gulp.task('update-own-deps', function() {
-  tools.updateOwnDependenciesFromLocalRepositories(args.depth);
+gulp.task('update-own-deps', function () {
+    tools.updateOwnDependenciesFromLocalRepositories(args.depth);
 });
 
 // quickly pulls in all of the aurelia
@@ -16,13 +16,13 @@ gulp.task('update-own-deps', function() {
 // from where the command is executed,
 // then runs `npm install`
 // and `gulp build` for each repo
-gulp.task('build-dev-env', function() {
-  tools.buildDevEnv();
+gulp.task('build-dev-env', function () {
+    tools.buildDevEnv();
 });
 
 // quickly pulls in all of the aurelia
 // github repos, placing them up one directory
 // from where the command is executed
-gulp.task('pull-dev-env', function() {
-  tools.pullDevEnv();
+gulp.task('pull-dev-env', function () {
+    tools.pullDevEnv();
 });

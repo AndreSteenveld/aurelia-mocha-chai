@@ -1,18 +1,18 @@
-import {inject} from 'aurelia-framework';
+import { inject } from 'aurelia-framework';
 
 @inject(Element)
 export class BlurImageCustomAttribute {
-  constructor(element) {
-    this.element = element;
-  }
-
-  valueChanged(newImage) {
-    if (newImage.complete) {
-      drawBlur(this.element, newImage);
-    } else {
-      newImage.onload = () => drawBlur(this.element, newImage);
+    constructor(element) {
+        this.element = element;
     }
-  }
+
+    valueChanged(newImage) {
+        if (newImage.complete) {
+            drawBlur(this.element, newImage);
+        } else {
+            newImage.onload = () => drawBlur(this.element, newImage);
+        }
+    }
 }
 
 /* eslint-disable */
