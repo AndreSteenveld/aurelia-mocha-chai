@@ -1,3 +1,10 @@
+/* eslint-disable */
+
+//
+// We are disableing lint for this script entirely, it feel so jumbled together instead of actually buildt.
+//
+"use strict";
+
 const gulp = require( "gulp" );
 const runSequence = require( "run-sequence" );
 const del = require( "del" );
