@@ -1,6 +1,17 @@
 {
-  "rules": {
-    "no-var": 0,
-    "no-console": 0
-  }
+    "env": {
+        "node": true
+    },
+    "rules": {
+        "no-var": 0,
+        "no-console": 0,
+
+        "prefer-arrow-callback": [ "off" ],
+        "prefer-template": [ "off" ],
+        "prefer-const": [ "off" ],
+        "no-restricted-syntax": [ "off" ],
+        "func-names": [ "off" ],
+
+        "guard-for-in": [ "warn" ]
+    }
 }
