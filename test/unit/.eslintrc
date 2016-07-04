@@ -1,4 +1,9 @@
 {
+  "globals": {
+    "assert": true,
+    "should": true,
+    "expect": true
+  },
   "env": {
     "mocha": true
   },

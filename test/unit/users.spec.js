@@ -22,8 +22,8 @@ describe( "the Users module", () => {
 
         http.itemStub = itemStubs;
         sut.activate().then( () => {
-            expect( sut.users ).toBe( itemStubs );
-            expect( sut.users ).not.toBe( itemFake );
+            expect( sut.users ).to.equal( itemStubs );
+            expect( sut.users ).to.not.equal( itemFake );
             done();
         });
     });
