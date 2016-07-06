@@ -9,6 +9,9 @@ var compilerOptions = require( "../babel-options" );
 var assign = Object.assign || require( "object.assign" );
 var notify = require( "gulp-notify" );
 var browserSync = require( "browser-sync" );
+var sass = require( "gulp-sass" );
+var autoprefixer = require( "gulp-autoprefixer" );
+var sass_importer = require( "sass-jspm-importer" );
 
 // transpiles changed es6 files to SystemJS format
 // the plumber() call prevents 'pipe breaking' caused
@@ -33,10 +36,20 @@ gulp.task( "build-html", function(){
 
 // copies changed css files to the output directory
 gulp.task( "build-css", function(){
-    return gulp.src( paths.css )
-    .pipe( changed( paths.output, { extension: ".css" }) )
-    .pipe( gulp.dest( paths.output ) )
-    .pipe( browserSync.stream() );
+    return gulp.src( paths.style )
+        .pipe( changed( paths.output, { extension: ".css" }) )
+        .pipe( sourcemaps.init( ) )
+        .pipe(
+            sass({
+                errLogToConsole: true,
+                functions: sass_importer.resolve_function( "./jspm_packages" ),
+                importer: sass_importer.importer
+            })
+        )
+        .pipe( autoprefixer({ browsers: [ "last 2 versions" ] }) )
+        .pipe( sourcemaps.write( ) )
+        .pipe( gulp.dest( paths.output ) )
+        .pipe( browserSync.stream() );
 });
 
 // this task calls the clean task (located

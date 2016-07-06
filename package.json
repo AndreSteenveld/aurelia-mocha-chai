@@ -47,6 +47,7 @@
     "eslint-plugin-jsx-a11y": "^1.5.3",
     "eslint-plugin-react": "^5.2.2",
     "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
     "gulp-babel": "^6.1.2",
     "gulp-bump": "^2.1.0",
     "gulp-changed": "^1.3.0",
@@ -54,11 +55,11 @@
     "gulp-notify": "^2.2.0",
     "gulp-plumber": "^1.1.0",
     "gulp-protractor": "2.4.0",
+    "gulp-sass": "^2.3.2",
     "gulp-sourcemaps": "^2.0.0-alpha",
     "isparta": "^4.0.0",
     "istanbul": "^1.0.0-alpha.2",
     "jasmine-core": "^2.4.1",
-    "jspm": "^0.16.15",
     "karma": "^0.13.22",
     "karma-babel-preprocessor": "^6.0.1",
     "karma-chai": "^0.1.0",
@@ -68,14 +69,17 @@
     "karma-jspm": "2.1.1",
     "karma-mocha": "^1.1.1",
     "mocha": "^2.5.3",
+    "node-sass": "^3.8.0",
     "object.assign": "^4.0.3",
     "require-dir": "^0.3.0",
     "run-sequence": "^1.2.1",
+    "sass-jspm-importer": "0.0.6",
     "vinyl-paths": "^2.1.0",
     "yargs": "^4.7.1"
   },
   "jspm": {
     "dependencies": {
+      "animate-sass": "bower:animate-sass@^0.6.6",
       "aurelia-animator-css": "npm:aurelia-animator-css@^1.0.0-rc.1.0.0",
       "aurelia-bootstrapper": "npm:aurelia-bootstrapper@^1.0.0-rc.1.0.0",
       "aurelia-fetch-client": "npm:aurelia-fetch-client@^1.0.0-rc.1.0.0",
@@ -92,8 +96,28 @@
       "bootstrap": "github:twbs/bootstrap@^3.3.6",
       "fetch": "github:github/fetch@^1.0.0",
       "font-awesome": "npm:font-awesome@4.6.3",
-      "text": "github:systemjs/plugin-text@^0.0.8"
+      "include-media": "bower:include-media@^1.4.6",
+      "include-media-export": "bower:include-media-export@^1.0.1",
+      "include-media-spread": "bower:include-media-spread@^1.1.1",
+      "normalize.scss": "bower:normalize.scss@^5.0.3",
+      "text": "github:systemjs/plugin-text@^0.0.8",
+      "thoughtbot/bourbon": "github:thoughtbot/bourbon@v5.0.0.beta.6",
+      "thoughtbot/neat": "github:thoughtbot/neat@1.8.0"
     },
-    "devDependencies": {}
+    "devDependencies": {},
+    "overrides": {
+      "github:thoughtbot/neat@1.8.0": {
+        "directories": {
+          "lib": "app/assets/stylesheets/"
+        },
+        "main": "_neat.scss"
+      },
+      "github:thoughtbot/bourbon@v5.0.0.beta.6": {
+        "directories": {
+          "lib": "core/"
+        },
+        "main": "_bourbon.scss"
+      }
+    }
   }
 }

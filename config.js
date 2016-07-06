@@ -4,7 +4,8 @@ System.config({
   paths: {
     "*": "dist/*",
     "github:*": "jspm_packages/github/*",
-    "npm:*": "jspm_packages/npm/*"
+    "npm:*": "jspm_packages/npm/*",
+    "bower:*": "jspm_packages/bower/*"
   },
   meta: {
     "bootstrap": {
@@ -14,6 +15,7 @@ System.config({
     }
   },
   map: {
+    "animate-sass": "bower:animate-sass@0.6.6",
     "aurelia-animator-css": "npm:aurelia-animator-css@1.0.0-rc.1.0.0",
     "aurelia-bootstrapper": "npm:aurelia-bootstrapper@1.0.0-rc.1.0.0",
     "aurelia-fetch-client": "npm:aurelia-fetch-client@1.0.0-rc.1.0.0",
@@ -30,7 +32,16 @@ System.config({
     "bootstrap": "github:twbs/bootstrap@3.3.6",
     "fetch": "github:github/fetch@1.0.0",
     "font-awesome": "npm:font-awesome@4.6.3",
+    "include-media": "bower:include-media@1.4.6",
+    "include-media-export": "bower:include-media-export@1.0.1",
+    "include-media-spread": "bower:include-media-spread@1.1.1",
+    "normalize.scss": "bower:normalize.scss@5.0.3",
     "text": "github:systemjs/plugin-text@0.0.8",
+    "thoughtbot/bourbon": "github:thoughtbot/bourbon@v5.0.0.beta.6",
+    "thoughtbot/neat": "github:thoughtbot/neat@1.8.0",
+    "bower:include-media-export@1.0.1": {
+      "include-media": "bower:include-media@1.4.6"
+    },
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.4.1"
     },
@@ -45,6 +56,9 @@ System.config({
     },
     "github:jspm/nodelibs-vm@0.1.0": {
       "vm-browserify": "npm:vm-browserify@0.0.4"
+    },
+    "github:thoughtbot/neat@1.8.0": {
+      "scss": "github:systemjs/plugin-text@0.0.8"
     },
     "github:twbs/bootstrap@3.3.6": {
       "jquery": "npm:jquery@3.0.0"
